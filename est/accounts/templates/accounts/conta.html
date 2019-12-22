@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <h2>Informe seus dados de cadastro</h2>
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                {{ form.non_field_errors }}
+                <ul class="errorlist">
+                    <div class="pure-control-group">
+                        <label for="username">Usuário</label>
+                        <input id="username" type="text" />
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="name">Senha</label>
+                        <input id="name" type="password" />
+                    </div>
+                    <div class="pure-controls">
+                        <button type="submit" class="pure-button pure-button-primary">Entrar</button>
+                    </div>
+                </ul>
+            </fieldset>
+            <p>
+                Não é cadastrado? <a href="{% url 'register' %}" title="">Cadastre-se</a>
+                Esqueceu a senha? <a href="" title="">Nova Senha</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock%}

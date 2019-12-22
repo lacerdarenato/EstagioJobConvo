@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="pure-g-r content-ribbon"> 
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">Minhas Vagas</h4>
+            <p>Lista de vagas disponiveis</p>
+        </div>
+    </div>
+    {% for vaga in vagas %}
+    <div class="pure-u-2-3">
+        <h2>{{ vaga.name }}</h2>
+        <div class="l-box">
+            <h4 class="content-subhead">{{vaga.get_escolaridadeMinima_display}}</h4>
+            <h3>{{vaga.requisitos}}</h3>
+            <h3>{{vaga.get_faixaSalarial_display}}</h3>
+            <a href="{% url 'enrollment' %}" class="pure-button primary-button">Candidate-se</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    
+
+
+{% endblock %}
